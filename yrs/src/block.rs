@@ -447,7 +447,7 @@ impl ItemPtr {
             item.len = offset;
             let mut new = Box::new(Item {
                 id: ID::new(client, clock + offset),
-                len: content.len(OffsetKind::Utf16),
+                len: len - offset,
                 left: Some(self_ptr),
                 right: item.right.clone(),
                 origin: Some(ID::new(client, clock + offset - 1)),
